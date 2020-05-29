@@ -18,5 +18,6 @@ func main() {
 		ReadTimeout: 15 * time.Second,
 		WriteTimeout: 15 * time.Second,
 	}
+	log.Println("Hate Speech Detector is listening on", server.Addr)
 	log.Fatalln(server.ListenAndServe())
 }
