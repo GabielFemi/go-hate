@@ -7,7 +7,7 @@ import (
 )
 
 func render (w http.ResponseWriter, tmpl string,r *http.Request) {
-	t, err := template.ParseFiles("index.html")
+	t, err := template.ParseFiles(tmpl)
 	if err != nil {
 		log.Fatalln(err)
 	}
