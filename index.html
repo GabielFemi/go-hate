@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <title>Hate Speech Detector - Golang version</title>
+    <style>
+        #red-text{
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <title>Detect Page</title>
+
+    <link rel="stylesheet" href="assets/css/textarea.css">
+    <!--<meta http-equiv="refresh" content = "10">-->
 </head>
 <body>
-<div class = "container">
-    <h1>This must surely work!</h1>
-    <hr>
-    <form action = "/" name = "hateForm" method="post">
-        <textarea placeholder="Enter what's on your mind!" name="speech"></textarea>
-        <input type="submit" class="btn btn-dark" value="Analyze">
+<?php
+include('templates/header.php');
+?>
+
+<div id="wrapper">
+
+    <form id="paper" method="post" action="detect.php">
+
+        <!--<div id="margin">Matric No.: <input id="title" type="text" name="mat_no"></div>-->
+        <textarea placeholder="Enter a sentence" id="text" name="sentence" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 300px; " autofocus></textarea>
+
+
+        <p id = "red-text"><?php echo $message?></p>
+        <p id = "red-text"><?php echo $error?></p>
+        <br>
+
+        <input id="button" name = "submit" type="submit" value="Submit">
+        <input class = "file" type="file" name="file_input">
+
     </form>
 
-</div>
 
+</div>
+<!--<script type="text/javascript" src="js/textarea.js"></script>-->
 </body>
 </html>
