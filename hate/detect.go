@@ -1,15 +1,16 @@
 package hateSpeech
 
 import (
-	"github.com/gorilla/mux"
+	"fmt"
 	"net/http"
 )
 
 func Detect(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
-		vars := mux.Vars(r)
-		speechGottenFromUser := vars["speech"]
+		_ = r.ParseForm()
+		speechGottenFromUser := r.FormValue("speech")
+		fmt.Println(speechGottenFromUser)
 		isSpeechHateWord(speechGottenFromUser)
 		http.Redirect(w, r, "/", 301)
 	} else {
