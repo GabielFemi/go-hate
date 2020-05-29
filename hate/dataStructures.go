@@ -1,3 +1,5 @@
 package hateSpeech
 
-var HateWords map[int]string
+type HateWords struct {
+	HateWordsMap map[int]string
+}
