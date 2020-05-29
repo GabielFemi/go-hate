@@ -11,15 +11,8 @@ func Home(w http.ResponseWriter, r *http.Request) {
 
 func Detect(w http.ResponseWriter, r *http.Request) {
 
-	if r.Method == "POST" {
-		_ = r.ParseForm()
-		speechGottenFromUser := r.FormValue("speech")
-		fmt.Println(speechGottenFromUser)
-		isSpeechHateWord(speechGottenFromUser)
-		http.Redirect(w, r, "/", 301)
-	} else {
-		render(w, "detect.html", r)
-	}
+	fmt.Println("yeah")
+	render(w, "detect.html", r)
 
 }
 
