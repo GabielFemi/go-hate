@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <title>Hate Speech Detector - Golang version</title>
 </head>
 <body>
-<p>This must surely work!</p>
+<div class = "container">
+    <h1>This must surely work!</h1>
+    <hr>
+    <form action = "/" name = "hateForm">
+        <textarea placeholder="Enter what's on your mind!" name="speech"></textarea>
+        <input type="submit" class="btn btn-dark" value="Analyze">
+    </form>
+
+</div>
+
 </body>
 </html>
