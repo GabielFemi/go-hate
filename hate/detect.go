@@ -6,11 +6,14 @@ import (
 )
 
 func Detect(w http.ResponseWriter, r *http.Request) {
-	render(w, "index.html", r)
+
 	if r.Method == "POST" {
 		vars := mux.Vars(r)
 		speechGottenFromUser := vars["speech"]
 		isSpeechHateWord(speechGottenFromUser)
+		http.Redirect(w, r, "/", 301)
+	} else {
+		render(w, "index.html", r)
 	}
 
 }
