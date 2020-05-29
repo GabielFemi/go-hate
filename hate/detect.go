@@ -5,6 +5,10 @@ import (
 	"net/http"
 )
 
+func Home(w http.ResponseWriter, r *http.Request) {
+	render(w, "index.html", r)
+}
+
 func Detect(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
@@ -14,7 +18,7 @@ func Detect(w http.ResponseWriter, r *http.Request) {
 		isSpeechHateWord(speechGottenFromUser)
 		http.Redirect(w, r, "/", 301)
 	} else {
-		render(w, "index.html", r)
+		render(w, "detect.html", r)
 	}
 
 }
