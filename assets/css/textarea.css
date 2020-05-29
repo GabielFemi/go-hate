@@ -6,7 +6,7 @@
 	
 }
 body {
-	background:#333 url(../img/bg.jfif) repeat;        
+	background:#333 url(/assets/img/bg.jfif) repeat;
 }
 #paper {
 	color:#FFF;
