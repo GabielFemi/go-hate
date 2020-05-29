@@ -10,6 +10,7 @@ import (
 
 func main() {
 	router := mux.NewRouter()
+	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 	router.HandleFunc("/",  hateSpeech.Detect)
 
 	server := http.Server{
