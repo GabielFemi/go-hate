@@ -11,7 +11,8 @@ import (
 func main() {
 	router := mux.NewRouter()
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
-	router.HandleFunc("/",  hateSpeech.Detect)
+	router.HandleFunc("/",  hateSpeech.Home)
+	router.HandleFunc("/detect", hateSpeech.Detect)
 
 	server := http.Server{
 		Addr: "127.0.0.1:5000",
