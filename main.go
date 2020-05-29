@@ -1,6 +1,7 @@
 package main
 
 import (
+	hateSpeech "github.com/gabielfemi/go-hate/hate"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -9,7 +10,7 @@ import (
 
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/", nil)
+	router.HandleFunc("/",  hateSpeech.Detect)
 
 	server := http.Server{
 		Addr: "127.0.0.1:5000",
